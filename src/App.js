@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {currencyRequest} from './redux/actions/PBactions';
-import {registr} from './redux/actions/inputAction'
 import PBdata from './Components/PBdata/PBdata';
 import Form from './Components/Form/Form';
 import './App.css';
@@ -10,7 +9,6 @@ class App extends Component {
 
   componentDidMount() {
     this.props.currencyFetch();
-    this.props.registration();
   }
 
   render() {
@@ -38,9 +36,6 @@ function MDTP(dispatch) {
     currencyFetch: function() {
       dispatch(currencyRequest())
     },
-    registration: function() {
-      dispatch(registr())
-    }
   }
 }
 
