@@ -11,7 +11,7 @@ const CryptData = (props) => {
                 {props.price}
             </td>
             <td className='currency'>
-                {props.price * props.value}
+                {props.value / props.price}
             </td>
         </tr>
     );
