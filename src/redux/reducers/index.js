@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import currency from './PBreducer';
-import inputs from './inputReducer';
+import cryptology from './cryptologyRaducer';
+import value from './inputReducer';
 
 const rootReducer = combineReducers({
-    currency,
-    inputs,
+    cryptology,
+    value,
 })
 
-export default rootReducer;     
+export default rootReducer;

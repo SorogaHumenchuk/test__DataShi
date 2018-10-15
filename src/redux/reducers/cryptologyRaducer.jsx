@@ -1,6 +1,6 @@
-export default function currency (state = [], action) {
+export default function cryptology (state = [], action) {
     switch(action.type) {
-        case 'CURRENCY':
+        case 'CRYPT':
             return action.data
         default:
             return state

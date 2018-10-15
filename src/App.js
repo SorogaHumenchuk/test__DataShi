@@ -1,42 +1,41 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {currencyRequest} from './redux/actions/PBactions';
-import PBdata from './Components/PBdata/PBdata';
-import Form from './Components/Form/Form';
+import {cryptRequest} from './redux/actions/cryptologyActions';
+import CryptTable from './Components/cryptTable/CryptTable';
+import Input from './Components/Input/Input';
 import './App.css';
 
 class App extends Component {
 
   componentDidMount() {
-    this.props.currencyFetch();
+    this.props.cryptRequest();
   }
 
+  
   render() {
     return (
-      <div className='wrapper'>
-        <div className='noise-img'></div>
-        <div className='noise-sm-img'></div>
-        <div className='container'>
-          <PBdata/>
-          <Form/>
-        </div>
+      <div>
+        <Input/>
+        <CryptTable/>
       </div>
-
-    );
+    )
   }
 }
 
+
+
 function MSTP(state) {
   return {
-    currency: state.currency,
+    cryptology: state.cryptology,
   }
 }
 function MDTP(dispatch) {
   return {
-    currencyFetch: function() {
-      dispatch(currencyRequest())
-    },
+      cryptRequest: function() {
+        dispatch(cryptRequest())
+      }
   }
 }
 
 export default connect (MSTP, MDTP) (App);
+
